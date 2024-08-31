@@ -4,30 +4,38 @@
 //
 //  Created by Haeven Kelley on 8/31/24.
 //
-
 import SwiftUI
-import SwiftData
+import CoreData
 
 @main
-struct TruthubApp: App {
-    // Shared ModelContainer setup with Video schema
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Video.self // Include the Video model in the schema
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+struct TrutubeApp: App {
+    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView() // The initial view of your app
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .modelContainer(sharedModelContainer) // Attach the model container to the environment
+    }
+}
+
+// PersistenceController.swift
+import CoreData
+
+struct PersistenceController {
+    static let shared = PersistenceController()
+
+    let container: NSPersistentContainer
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentContainer(name: "TrutubeDataModel")
+        if inMemory {
+            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        }
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
     }
 }

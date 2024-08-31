@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C7B9770A2C838047002456B0 /* Video+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B977092C838047002456B0 /* Video+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C7B9769E2C837779002456B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		C7B9768B2C837778002456B0 /* Truthub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truthub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B9769D2C837779002456B0 /* TruthubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruthubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B976A72C837779002456B0 /* TruthubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruthubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7B977092C838047002456B0 /* Video+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		C7B976822C837778002456B0 = {
 			isa = PBXGroup;
 			children = (
+				C7B977092C838047002456B0 /* Video+CoreDataProperties.swift */,
 				C7B9768D2C837778002456B0 /* Truthub */,
 				C7B976A02C837779002456B0 /* TruthubTests */,
 				C7B976AA2C837779002456B0 /* TruthubUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B9770A2C838047002456B0 /* Video+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
